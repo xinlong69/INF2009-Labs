@@ -45,10 +45,10 @@ Developing a computer (ideally embedded) aided audio listening system similar to
 **4. Introduction to Sound Processing with Python (20 minutes)**
 - Installing necessary Python libraries (may need additional libraries if not preinstalled with default python):
   ```bash
-  sudo apt install portaudio19-dev
-  pip3 install pyaudio
-  pip3 install sounddevice
-  pip3 install scipy matplotlib
+  sudo apt install portaudio19-dev # A development library for PortAudio (a cross-platform audio I/O library). This installs the system-level dependency required for PyAudio (a Python library for audio I/O) to work.
+  pip3 install pyaudio # A Python binding for PortAudio, enabling audio recording and playback in Python. It allows Python programs to work with microphones and speakers (e.g., for real-time audio streaming).
+  pip3 install sounddevice # A Python library for audio playback and recording, based on PortAudio (like PyAudio) but with a simpler interface and additional features like NumPy support. It provides an alternative to PyAudio for audio I/O, with better integration with NumPy arrays for audio processing.
+  pip3 install scipy matplotlib # A plotting library for visualizing data (e.g., waveforms, spectrograms). These libraries are often used alongside audio libraries for processing and visualizing audio signals.
   ```
   **Note that you need either pyaudio or sounddevice to record the audio stream from microphone**
 - Capturing audio in Python.
@@ -73,6 +73,22 @@ Developing a computer (ideally embedded) aided audio listening system similar to
   - Install the [librosa library](https://librosa.org/doc/latest/index.html) using the command
      ```bash
      pip install librosa
+
+     '''
+        LibROSA is a powerful library for:
+
+          Audio loading & processing (supports WAV, MP3, FLAC, etc.).
+
+          Feature extraction (e.g., Mel-frequency cepstral coefficients - MFCCs, chroma, spectral contrast).
+
+          Tempo & beat tracking (identify rhythm in music).
+
+          Time-frequency analysis (spectrograms, STFT, CQT).
+
+          Pitch & tuning estimation (detect musical notes).
+
+          Visualization tools (waveforms, spectrograms, etc.).
+     '''
      ```
   - In this section, we will explore various features which can be extracted from speech/audio time series employing the librosa library. A [sample code](https://github.com/drfuzzi/INF2009_SoundAnalytics/blob/main/Codes/audio_features.py) which shows how to extract the above features is available for testing.
   - The time series recorded through microphone and saved as test.wav (mostly speech with some background noise) and its spectrogram are shown below \

@@ -134,6 +134,7 @@ stream = audio.open(
 print('stream started')
 exec_time = []
 
+# Loops through each buffer-sized audio frame.
 # Loops for a duration of RECORD_SECONDS (20 seconds).
 # The number of iterations is calculated based on the sample rate and buffer size.
 for _ in range(0, RATE // BUFFER * RECORD_SECONDS):   
@@ -144,7 +145,17 @@ for _ in range(0, RATE // BUFFER * RECORD_SECONDS):
    
     # convert data to 16bit integers
     # Converts binary audio data into an array of 16-bit integers.
-    data_int = struct.unpack(str(BUFFER) + 'h', data)    
+    data_int = struct.unpack(str(BUFFER) + 'h', data)
+
+    '''
+    stream.read(BUFFER): Reads a frame of audio data.
+
+    struct.unpack(str(BUFFER) + 'h', data):
+
+        Converts raw binary data to integer values.
+
+        'h' specifies 16-bit signed integers.
+    '''
     
     # Bandpass filtering
     # Records the start time to calculate processing speed.
