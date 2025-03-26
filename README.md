@@ -41,7 +41,7 @@ In this lab, few basic and advanced image processing tasks on edge devices is in
   ```bash
   pip install opencv-python  
   ```
-- The [sample code](Codes/image_capture_display.py) shows the code to read frames from a webcam and then based on the intensity range for each colour channel (RGB), how to segment the image into red green and blue images. A sample image and the colour segmentation is as shown below:
+- The [sample code](/image_capture_display.py) shows the code to read frames from a webcam and then based on the intensity range for each colour channel (RGB), how to segment the image into red green and blue images. A sample image and the colour segmentation is as shown below:
   ![image](https://github.com/drfuzzi/INF2009_ImageAnalytics/assets/52023898/fd7c115d-0301-0d2-b2c1-7966dce3fec)
 - Expand the code to segment another colour (say yellow)
 
@@ -50,12 +50,12 @@ In this lab, few basic and advanced image processing tasks on edge devices is in
   ```bash
   pip install scikit-image  
   ```
-- Computer vision employs feature extraction from images. Some important image features include edges and textures. In this section we will employ a feature named histogram of gradients (HoG) which is widely employed for face recognition and other tasks. HoG involves gradient operation (basically extracting edges) on various image patches (by dividing the image into blocks). A [sample code](Codes/image_hog_feature.py) involving scikit-image is employed for the same. The code displays the dominant HoG image for each image patch overlaid on the actual image. It has to be noted that OpenCV can also be employed for the same task, but the visualization using scikit-image is better compared to that from OpenCV. A sample image for the HoG feature is as shown below:
+- Computer vision employs feature extraction from images. Some important image features include edges and textures. In this section we will employ a feature named histogram of gradients (HoG) which is widely employed for face recognition and other tasks. HoG involves gradient operation (basically extracting edges) on various image patches (by dividing the image into blocks). A [sample code](/image_hog_feature.py) involving scikit-image is employed for the same. The code displays the dominant HoG image for each image patch overlaid on the actual image. It has to be noted that OpenCV can also be employed for the same task, but the visualization using scikit-image is better compared to that from OpenCV. A sample image for the HoG feature is as shown below:
 ![image](https://github.com/drfuzzi/INF2009_ImageAnalytics/assets/52023898/94e7d597-c259-4634-a3dc-433c79e8533b)
   -  Note the usage of colour (RGB) to gray scale converion employed before HoG feature extraction.
   - Run the code with and without resizing the image and observe the resultant frame rate. It is important to note that for edge computing, downsizing the image will speed up the compute and many such informed decisions are critical.
   - Change the patch size in line 25 (feature.hog) and observe the changes in the results.
-- The HoG features can be employed to identify the presence of face. An [example using OpenCV](Codes/image_human_capture.py) is available for experimenting with. A multiscale HoG feature extraction is employed in this case. This involves extracting HoG features at multiple scales (resolutions) of the given image. 
+- The HoG features can be employed to identify the presence of face. An [example using OpenCV](/image_human_capture.py) is available for experimenting with. A multiscale HoG feature extraction is employed in this case. This involves extracting HoG features at multiple scales (resolutions) of the given image. 
 
 **6. Real-time Image Feature Analysis for Face Capture and Facial Landmark Extraction (20 minutes)**
 - In this work, a light weight opensource library named *"Mediapipe"* for tasks such as face landmark detection, pose estimation, hand landmark detection, hand gesture recognition and object detection using pretrained neural network models.
@@ -64,10 +64,10 @@ In this lab, few basic and advanced image processing tasks on edge devices is in
   ```bash  
   pip install mediapipe
   ```
-- Try the [sample code](Codes/image_face_capture.py) to detect the face based on Mediapipe's approach which is very light weight when compared to the approach employed in above section. Observe the speed up. - A sample image with face landmarks is as shown below:
+- Try the [sample code](/image_face_capture.py) to detect the face based on Mediapipe's approach which is very light weight when compared to the approach employed in above section. Observe the speed up. - A sample image with face landmarks is as shown below:
 ![Mediapipe Face Mesh_screenshot_18 01 2025](https://github.com/user-attachments/assets/3e952cbb-72df-4258-9d96-83f05c741096)
 
-- [Optional] An opencv alternative (no dependence on mediapipe) of the face detection is available in the [sample code](Codes/image_human_capture_opencv.py). If you are using this code, make sure you download the [Haar cascade model](https://raw.githubusercontent.com/opencv/opencv/master/data/haarcascades/haarcascade_frontalface_alt2.xml) manually and save it as 'haarcascade_frontalface_alt2.xml' in the same folder as the code. 
+- [Optional] An opencv alternative (no dependence on mediapipe) of the face detection is available in the [sample code](/image_human_capture_opencv.py). If you are using this code, make sure you download the [Haar cascade model](https://raw.githubusercontent.com/opencv/opencv/master/data/haarcascades/haarcascade_frontalface_alt2.xml) manually and save it as 'haarcascade_frontalface_alt2.xml' in the same folder as the code. 
 ---
 
 **[Optional] Homework/Extended Activities:**
