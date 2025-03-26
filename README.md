@@ -39,11 +39,11 @@ Edge analytics with real-time processing capabilities is chellenging but importa
 
 - Same as last lab, for video capture we’re going to be using OpenCV to stream the video frames. The model we are going to use in this lab is MobileNetV2, which takes in image sizes of 224x224. We are targeting 30fps for the model but we will request a slightly higher framerate of 36 fps than that so there is always enough frames and bandwidth of image pre-processing and model prediction.
 
-- **Part 1.** [sample code](Codes/mobile_net.py) is used to directly load pre-trained MobileNetV2 model, doing model inference and finally, Observe the fps as shown in screenshot below when run on RaspberryPi 4B. As shown, with no optimization of model, we could only achieve of 5-6 fps much below our desired target.
+- **Part 1.** [sample code](/mobile_net.py) is used to directly load pre-trained MobileNetV2 model, doing model inference and finally, Observe the fps as shown in screenshot below when run on RaspberryPi 4B. As shown, with no optimization of model, we could only achieve of 5-6 fps much below our desired target.
 
   ![image1](https://github.com/user-attachments/assets/8e3cf302-45f3-41c9-85a5-a1bd118d30c4)
 
-- **Part 2.** Edit line number 11 as shown below to enable quantization in [sample code](Codes/mobile_net.py) to use quantized version of MobileNetV2 model.
+- **Part 2.** Edit line number 11 as shown below to enable quantization in [sample code](/mobile_net.py) to use quantized version of MobileNetV2 model.
 
   ```bash
   quantize = True
@@ -55,7 +55,7 @@ Edge analytics with real-time processing capabilities is chellenging but importa
 
     [Quantization](https://pytorch.org/docs/stable/quantization.html) techniques enable computations and tensor storage at reduced bitwidths compared to floating-point precision. In a quantized model, some or all operations use this lower precision, resulting in a smaller model size and the ability to leverage hardware-accelerated vector operations.
 
-- **Part 3.** Uncomment lines 57-61 in [sample code](Codes/mobile_net.py) to print the top 10 predictions in real-time as shown in below video.
+- **Part 3.** Uncomment lines 57-61 in [sample code](/mobile_net.py) to print the top 10 predictions in real-time as shown in below video.
 
 https://github.com/user-attachments/assets/5ee2a4c8-1988-4021-b194-aa0786a1ebfc
 
