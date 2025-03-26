@@ -55,8 +55,8 @@ Developing a computer (ideally embedded) aided audio listening system similar to
 - Fourier Transform: Understanding frequency components of sound.
 - Visualizing sound waves (both the wave itself and the audio spectrum).
   - For above tasks, you can use the
-     - [sample code](Codes/microphone_streaming_with_spectrum.py) if you are using *pyaudio*.
-     - [sample code](Codes/microphone_streaming_with_spectrum_updated.py) if you are using *sounddevice*. 
+     - [sample code](/microphone_streaming_with_spectrum_pyaudio.py) if you are using *pyaudio*.
+     - [sample code](/microphone_streaming_with_spectrum_sounddevice.py) if you are using *sounddevice*. 
   - A sample captured speech and its spectrum are shown below
     ![image](https://github.com/drfuzzi/INF2009_SoundAnalytics/assets/52023898/26449854-8770-46a7-ac2d-de94f8f2bc7a)
   - The top plot shows a sample time series of the captured audio and the bottom plot shows the frequency components present in the time series. It is easier to intepret audio by its spectrum.
@@ -66,8 +66,8 @@ Developing a computer (ideally embedded) aided audio listening system similar to
 **5. Basic Sound Analytics (40 minutes)**
 - Filtering: Removing noise or specific frequencies. The below code illustrates a bandpass filter (only passes audio within a certain frequencies as decided by the user are kept).
 - For the filtering task, you can use the
-  - [sample code](Codes/filtering_audio.py) if you are using *pyaudio*.
-  - [sample code](Codes/filtering_audio_updated.py) if you are using *sounddevice*.
+  - [sample code](/filtering_audio_pyaudio.py) if you are using *pyaudio*.
+  - [sample code](/filtering_audio_sounddevice.py) if you are using *sounddevice*.
   - Using the audio spectrum visualization, identify the frequency to be kept (e.g. tap sound or some particular sound) and change the above code accordingly.
 - Feature extraction: Spectrogram, Chromogram, Mel-Spectrogram and MFFC.
   - Install the [librosa library](https://librosa.org/doc/latest/index.html) using the command
@@ -113,7 +113,7 @@ Developing a computer (ideally embedded) aided audio listening system similar to
   pip install SpeechRecognition
   ```
   - A FLAC encoder (installed through above command) is required to encode the audio data to send to the API. Similarly CM Sphinx is also installed through above commands
-  - The [sample code](Codes/microphone_recognition.py) illustrates to record an audio, then use the CMUSphinx API and Google Speech Recognition APIs to predict the spoken text
+  - The [sample code](/microphone_recognition.py) illustrates to record an audio, then use the CMUSphinx API and Google Speech Recognition APIs to predict the spoken text
   - Its important to see the 'Say Something' before you start speaking as in the initial few seconds the ambient noise is being captured.
   - A sample display screen will look like as in below:
     ![image](https://github.com/drfuzzi/INF2009_SoundAnalytics/assets/52023898/bc5b4ccc-f06e-422e-b0f0-8a403e14cc65)
